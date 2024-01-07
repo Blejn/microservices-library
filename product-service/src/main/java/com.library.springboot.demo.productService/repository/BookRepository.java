@@ -1,0 +1,12 @@
+package com.library.springboot.demo.productService.repository;
+
+
+import com.library.springboot.demo.productService.model.Book;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface BookRepository extends JpaRepository<Book, Long> {
+
+
+}
