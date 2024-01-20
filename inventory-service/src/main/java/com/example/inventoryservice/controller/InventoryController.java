@@ -16,11 +16,12 @@ import java.util.List;
 public class InventoryController {
 
     private final InventoryService inventoryService;
+
     private static final Logger logger = LoggerFactory.getLogger(InventoryController.class);
 
     @GetMapping("/check")
     @ResponseStatus(HttpStatus.OK)
-    public List<InventoryResponse> isInStock(@RequestParam List<String> skuCode) {
+    public List<InventoryResponse> isInStock(@RequestParam List<String> skuCode) throws InterruptedException {
         logger.info("Received inventory check request for skuCode: {}", skuCode);
 
         return inventoryService.isInStock(skuCode);
